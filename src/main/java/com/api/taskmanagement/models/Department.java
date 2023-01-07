@@ -22,4 +22,7 @@ public class Department {
 
   @OneToMany(mappedBy = "department")
   private List<Person> people;
+
+  @OneToMany(mappedBy = "department")
+  private List<Task> tasks;
 }

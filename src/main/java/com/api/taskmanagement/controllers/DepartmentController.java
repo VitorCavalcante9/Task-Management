@@ -19,7 +19,7 @@ import com.api.taskmanagement.services.DepartmentService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/department")
+@RequestMapping("/departments")
 public class DepartmentController {
 
   @Autowired

@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.api.taskmanagement.dtos.ListPeopleDto;
 import com.api.taskmanagement.dtos.PersonDto;
 import com.api.taskmanagement.dtos.PersonExpensesDto;
 import com.api.taskmanagement.models.Department;
@@ -39,8 +40,8 @@ public class PersonService {
     return personRepository.save(person);
   }
 
-  public List<Person> findAll() {
-    return personRepository.findAll();
+  public List<ListPeopleDto> findAll() {
+    return personRepository.findAllWithDepartmentAndTaskDuration();
   }
 
   public List<PersonExpensesDto> findAllWithAvgDuration(String name) {

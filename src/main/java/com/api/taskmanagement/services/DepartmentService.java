@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.api.taskmanagement.dtos.ListDepartmentDto;
 import com.api.taskmanagement.models.Department;
 import com.api.taskmanagement.repositories.DepartmentRepository;
 
@@ -28,8 +29,8 @@ public class DepartmentService {
     return departmentRepository.save(department);
   }
 
-  public List<Department> findAll() {
-    return departmentRepository.findAll();
+  public List<ListDepartmentDto> findAll() {
+    return departmentRepository.findAllWithPeopleAndTasks();
   }
 
   public Optional<Department> findById(Long id) {

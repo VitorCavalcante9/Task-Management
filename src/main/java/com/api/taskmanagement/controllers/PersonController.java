@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.taskmanagement.dtos.PersonDto;
@@ -30,6 +31,11 @@ public class PersonController {
   @GetMapping
   public ResponseEntity<Object> list() {
     return ResponseEntity.status(HttpStatus.OK).body(personService.findAll());
+  } 
+
+  @GetMapping("/expenses")
+  public ResponseEntity<Object> listExpenses(@RequestParam String name) {
+    return ResponseEntity.status(HttpStatus.OK).body(personService.findAllWithAvgDuration(name));
   } 
 
   @GetMapping("/{id}")

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.api.taskmanagement.dtos.PersonDto;
+import com.api.taskmanagement.dtos.PersonExpensesDto;
 import com.api.taskmanagement.models.Department;
 import com.api.taskmanagement.models.Person;
 import com.api.taskmanagement.repositories.DepartmentRepository;
@@ -40,6 +41,10 @@ public class PersonService {
 
   public List<Person> findAll() {
     return personRepository.findAll();
+  }
+
+  public List<PersonExpensesDto> findAllWithAvgDuration(String name) {
+    return personRepository.findWithDurationAverage(name);
   }
 
   public Optional<Person> findById(Long id) {

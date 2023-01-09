@@ -1,6 +1,5 @@
 package com.api.taskmanagement.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,18 +11,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.taskmanagement.dtos.DepartmentDto;
+import com.api.taskmanagement.dtos.requests.DepartmentDto;
 import com.api.taskmanagement.models.Department;
 import com.api.taskmanagement.services.DepartmentService;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/departments")
+@RequiredArgsConstructor
 public class DepartmentController {
 
-  @Autowired
-  DepartmentService departmentService;
+  private final DepartmentService departmentService;
 
   @PostMapping
   public ResponseEntity<Object> create(@RequestBody Department department) {

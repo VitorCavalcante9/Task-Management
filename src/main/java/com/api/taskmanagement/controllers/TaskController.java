@@ -1,6 +1,5 @@
 package com.api.taskmanagement.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,16 +11,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.taskmanagement.dtos.AllocatePersonTaskDto;
-import com.api.taskmanagement.dtos.TaskDto;
+import com.api.taskmanagement.dtos.requests.AllocatePersonTaskDto;
+import com.api.taskmanagement.dtos.requests.TaskDto;
 import com.api.taskmanagement.services.TaskService;
+
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/tasks")
+@RequiredArgsConstructor
 public class TaskController {
   
-  @Autowired
-  TaskService taskService;
+  private final TaskService taskService;
 
   @PostMapping
   public ResponseEntity<Object> create(@RequestBody TaskDto taskDto) {

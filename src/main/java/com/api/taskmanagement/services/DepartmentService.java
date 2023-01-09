@@ -3,20 +3,20 @@ package com.api.taskmanagement.services;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.api.taskmanagement.dtos.ListDepartmentDto;
+import com.api.taskmanagement.dtos.responses.ListDepartmentDto;
 import com.api.taskmanagement.models.Department;
 import com.api.taskmanagement.repositories.DepartmentRepository;
 
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 
 @Service
+@RequiredArgsConstructor
 public class DepartmentService {
 
-  @Autowired
-  DepartmentRepository departmentRepository;
+  private final DepartmentRepository departmentRepository;
 
   @Transactional
   public Department create(Department department) {

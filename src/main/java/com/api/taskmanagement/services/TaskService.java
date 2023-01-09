@@ -6,20 +6,20 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.api.taskmanagement.dtos.TaskDto;
+import com.api.taskmanagement.dtos.requests.TaskDto;
 import com.api.taskmanagement.models.*;
 import com.api.taskmanagement.repositories.*;
 
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 
 @Service
+@RequiredArgsConstructor
 public class TaskService {
   
-  @Autowired
-  TaskRepository taskRepository;
+  private final TaskRepository taskRepository;
   
-  @Autowired
-  PersonRepository personRepository;
+  private final PersonRepository personRepository;
 
   @Autowired
   DepartmentRepository departmentRepository;

@@ -1,4 +1,4 @@
-package com.api.taskmanagement.dtos;
+package com.api.taskmanagement.dtos.requests;
 
 import java.sql.Date;
 

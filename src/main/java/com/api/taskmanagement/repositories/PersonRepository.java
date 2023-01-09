@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.api.taskmanagement.dtos.ListPeopleDto;
-import com.api.taskmanagement.dtos.PersonExpensesDto;
+import com.api.taskmanagement.dtos.responses.ListPeopleDto;
+import com.api.taskmanagement.dtos.responses.PersonExpensesDto;
 import com.api.taskmanagement.models.Person;
 
 public interface PersonRepository extends JpaRepository<Person, Long> {

@@ -1,4 +1,4 @@
-package com.api.taskmanagement.dtos;
+package com.api.taskmanagement.dtos.responses;
 
 import lombok.Data;
 

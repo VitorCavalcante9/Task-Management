@@ -3,27 +3,26 @@ package com.api.taskmanagement.services;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.api.taskmanagement.dtos.ListPeopleDto;
-import com.api.taskmanagement.dtos.PersonDto;
-import com.api.taskmanagement.dtos.PersonExpensesDto;
+import com.api.taskmanagement.dtos.requests.PersonDto;
+import com.api.taskmanagement.dtos.responses.ListPeopleDto;
+import com.api.taskmanagement.dtos.responses.PersonExpensesDto;
 import com.api.taskmanagement.models.Department;
 import com.api.taskmanagement.models.Person;
 import com.api.taskmanagement.repositories.DepartmentRepository;
 import com.api.taskmanagement.repositories.PersonRepository;
 
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 
 @Service
+@RequiredArgsConstructor
 public class PersonService {
   
-  @Autowired
-  PersonRepository personRepository;
+  private final PersonRepository personRepository;
 
-  @Autowired
-  DepartmentRepository departmentRepository;
+  private final DepartmentRepository departmentRepository;
 
   @Transactional
   public Person create(PersonDto personDto) {

@@ -113,8 +113,8 @@ public class PersonControllerTest {
   }
 
   @Test
-  @DisplayName("show returns person when is not found") 
-  void show_ReturnsPerson_WhenNotFound() {
+  @DisplayName("show returns nothing when is not found") 
+  void show_ReturnsNothing_WhenNotFound() {
     BDDMockito.when(personServiceMock.findById(ArgumentMatchers.anyLong()))
       .thenReturn(Optional.empty());
 

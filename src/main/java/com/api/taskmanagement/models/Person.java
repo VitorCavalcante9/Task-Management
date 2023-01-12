@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIdentityInfo(
+  scope = Person.class,
   generator = ObjectIdGenerators.PropertyGenerator.class, 
   property = "id")
 @Builder

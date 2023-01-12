@@ -112,6 +112,7 @@ public class DepartmentControllerIT {
     String url = String.format("/departments/%s", savedDepartment.getId());
 
     ResponseEntity<Department> departmentResponseEntity = testRestTemplate.exchange(url, HttpMethod.PUT, new HttpEntity<>(requestBody), Department.class);
+    
     Assertions.assertThat(departmentResponseEntity).isNotNull();
     Assertions.assertThat(departmentResponseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
     Assertions.assertThat(departmentResponseEntity.getBody()).isNotNull();

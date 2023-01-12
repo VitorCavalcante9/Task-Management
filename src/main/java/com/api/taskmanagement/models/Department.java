@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIdentityInfo(
+  scope = Department.class,
   generator = ObjectIdGenerators.PropertyGenerator.class, 
   property = "id")
 @Builder

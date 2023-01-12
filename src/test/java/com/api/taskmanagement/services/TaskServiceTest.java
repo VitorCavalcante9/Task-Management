@@ -87,8 +87,8 @@ public class TaskServiceTest {
   }
 
   @Test
-  @DisplayName("findThreeOldestTasksWithoutPerson returns list of tasks when not found") 
-  void findThreeOldestTasksWithoutPerson_ReturnsListOfTasks_WhenNotFound() {
+  @DisplayName("findThreeOldestTasksWithoutPerson returns a empty list of tasks when not found") 
+  void findThreeOldestTasksWithoutPerson_ReturnsEmptyListOfTasks_WhenNotFound() {
     BDDMockito.when(taskRepositoryMock.findAll())
       .thenReturn(List.of());
 
@@ -109,8 +109,8 @@ public class TaskServiceTest {
   }
 
   @Test
-  @DisplayName("findById returns task when is not found") 
-  void findById_ReturnsTask_WhenNotFound() {
+  @DisplayName("findById returns nothing when is not found") 
+  void findById_ReturnsNothing_WhenNotFound() {
     BDDMockito.when(taskRepositoryMock.findById(ArgumentMatchers.anyLong()))
       .thenReturn(Optional.empty());
 

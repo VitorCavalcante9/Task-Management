@@ -116,8 +116,8 @@ public class PersonServiceTest {
   }
 
   @Test
-  @DisplayName("findById returns person when is not found") 
-  void findById_ReturnsPerson_WhenNotFound() {
+  @DisplayName("findById returns nothing when is not found") 
+  void findById_ReturnsNothing_WhenNotFound() {
     BDDMockito.when(personRepositoryMock.findById(ArgumentMatchers.anyLong()))
       .thenReturn(Optional.empty());
 

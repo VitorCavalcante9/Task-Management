@@ -101,8 +101,8 @@ public class TaskRepositoryTest {
   }
 
   @Test
-  @DisplayName("Find Three Oldest Tasks Without Person returns a list of tasks when Successful")
-  void findThreeOldestTasksWithoutTask_ReturnsListOfTask_WhenNotFound() {
+  @DisplayName("Find Three Oldest Tasks Without Person returns a empty list of tasks when Successful")
+  void findThreeOldestTasksWithoutTask_ReturnsEmptyListOfTask_WhenNotFound() {
     List<Task> tasks = this.taskRepository.findThreeOldestTasksWithoutPerson();
 
     Assertions.assertThat(tasks).isEmpty();

@@ -102,8 +102,8 @@ public class PersonRepositoryTest {
   }
 
   @Test
-  @DisplayName("Find With Duration Average returns a list of PersonExpensesDto when not found")
-  void findAllWithDurationAverage_returnsPersonExpensesDto_WhenNotFound() {
+  @DisplayName("Find With Duration Average returns a empty list of PersonExpensesDto when not found")
+  void findAllWithDurationAverage_returnsEmptyListPersonExpensesDto_WhenNotFound() {
     List<PersonExpensesDto> personExpenses = this.personRepository.findWithDurationAverage("Alan");
 
     Assertions.assertThat(personExpenses).isEmpty();
@@ -129,8 +129,8 @@ public class PersonRepositoryTest {
   }
 
   @Test
-  @DisplayName("Find With Department and Task Duration returns a list of ListPeopleDto when not found")
-  void findAllWithDepartmentAndTaskDuration_returnsListPeopleDto_WhenNotFound() {
+  @DisplayName("Find With Department and Task Duration returns a empty list of ListPeopleDto when not found")
+  void findAllWithDepartmentAndTaskDuration_returnsEmptyListPeopleDto_WhenNotFound() {
     List<ListPeopleDto> listPeople = this.personRepository.findAllWithDepartmentAndTaskDuration();
 
     Assertions.assertThat(listPeople).isEmpty();

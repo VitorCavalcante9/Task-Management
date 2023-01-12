@@ -105,8 +105,8 @@ public class DepartmentRepositoryTest {
   }
 
   @Test
-  @DisplayName("Find All With People and Tasks returns a list of ListDepartmentDto when not found")
-  void findAllWithPeopleAndTasks_returnsListDepartmentDto_WhenNotFound() {
+  @DisplayName("Find All With People and Tasks returns a empty list of ListDepartmentDto when not found")
+  void findAllWithPeopleAndTasks_returnsEmptyListDepartmentDto_WhenNotFound() {
     List<ListDepartmentDto> departments = this.departmentRepository.findAllWithPeopleAndTasks();
 
     Assertions.assertThat(departments).isEmpty();

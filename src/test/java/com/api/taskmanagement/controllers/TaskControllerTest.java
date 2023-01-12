@@ -71,7 +71,7 @@ public class TaskControllerTest {
 
   @Test
   @DisplayName("list returns a empty list of tasks when is not found") 
-  void list_ReturnsListOfTasks_WhenIsNotFound() {
+  void list_ReturnsEmptyListOfTasks_WhenIsNotFound() {
     BDDMockito.when(taskServiceMock.findAll())
       .thenReturn(List.of());
 
@@ -89,8 +89,8 @@ public class TaskControllerTest {
   }
 
   @Test
-  @DisplayName("pendingTasks returns list of tasks when not found") 
-  void pendingTasks_ReturnsListOfTasks_WhenNotFound() {
+  @DisplayName("pendingTasks returns a empty list of tasks when not found") 
+  void pendingTasks_ReturnsEmptyListOfTasks_WhenNotFound() {
     BDDMockito.when(taskServiceMock.findThreeOldestTasksWithoutPerson())
       .thenReturn(List.of());
 

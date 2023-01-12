@@ -84,8 +84,8 @@ public class DepartmentControllerTest {
   }
 
   @Test
-  @DisplayName("show returns department when is not found") 
-  void show_ReturnsDepartment_WhenNotFound() {
+  @DisplayName("show returns nothing when is not found") 
+  void show_ReturnsNothing_WhenNotFound() {
     BDDMockito.when(departmentServiceMock.findById(ArgumentMatchers.anyLong()))
       .thenReturn(Optional.empty());
 

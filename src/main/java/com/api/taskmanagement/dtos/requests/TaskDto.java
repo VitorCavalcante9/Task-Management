@@ -3,9 +3,13 @@ package com.api.taskmanagement.dtos.requests;
 import java.sql.Date;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TaskDto {
   @NotBlank
   private String title;

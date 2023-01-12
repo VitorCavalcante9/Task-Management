@@ -21,8 +21,7 @@ public class TaskService {
   
   private final PersonRepository personRepository;
 
-  @Autowired
-  DepartmentRepository departmentRepository;
+  private final DepartmentRepository departmentRepository;
 
   @Transactional
   public Task create(TaskDto taskDto) {

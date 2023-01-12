@@ -12,6 +12,8 @@ import org.mockito.ArgumentMatchers;
 import org.mockito.BDDMockito;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.api.taskmanagement.dtos.requests.PersonDto;
@@ -133,9 +135,6 @@ public class PersonControllerTest {
   @DisplayName("update returns person when successful")
   void update_ReturnsPerson_WhenSuccessful() {
     Person person = personController.create(new PersonDto("Alan", 1L)).getBody();
-    
-    BDDMockito.when(personServiceMock.create(ArgumentMatchers.any(PersonDto.class)))
-      .thenReturn(PersonCreator.createValidUpdatedPerson());
 
     Person updatedPerson = personController.update(1L, new PersonDto("Rafael", 1L)).getBody();
 
@@ -148,6 +147,12 @@ public class PersonControllerTest {
   @DisplayName("delete removes person when successful")
   void delete_RemovesPerson_WhenSuccessful() {
     Assertions.assertThatCode(() -> personController.delete(1L)).doesNotThrowAnyException();
+
+    ResponseEntity<String> entity = personController.delete(1L);
+
+    Assertions.assertThat(entity).isNotNull();
+    Assertions.assertThat(entity.getBody()).isNotNull().isEqualTo("Person deleted successfully");
+    Assertions.assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
   }
   
 }

@@ -12,6 +12,10 @@ public class PersonCreator {
     return Person.builder().name("Alan").id(1L).build();
   }
 
+  public static Person createValidPersonWithDepartment() {
+    return Person.builder().name("Alan").id(1L).department(DepartmentCreator.createValidDepartment()).build();
+  }
+
   public static Person createValidUpdatedPerson() {
     return Person.builder().name("Rafael").id(1L).build();
   }

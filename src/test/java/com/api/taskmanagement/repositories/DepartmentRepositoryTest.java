@@ -52,7 +52,7 @@ public class DepartmentRepositoryTest {
 
   @Test
   @DisplayName("Delete removes department when Successful")
-  void delete_RemovesAnime_WhenSuccessful() {
+  void delete_RemovesPerson_WhenSuccessful() {
     Department departmentToBeSaved = DepartmentCreator.createDepartmentToBeSaved();
     Department departmentSaved = this.departmentRepository.save(departmentToBeSaved);
 

@@ -60,7 +60,7 @@ public class DepartmentServiceTest {
 
   @Test
   @DisplayName("listAll returns a empty list of department when is not found") 
-  void listAll_ReturnsEmptyListOfDepartments_WhenISNotFound() {
+  void listAll_ReturnsEmptyListOfDepartments_WhenIsNotFound() {
     BDDMockito.when(departmentRepositoryMock.findAllWithPeopleAndTasks())
       .thenReturn(List.of());
 

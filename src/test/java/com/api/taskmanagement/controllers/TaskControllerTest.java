@@ -111,8 +111,8 @@ public class TaskControllerTest {
   }
 
   @Test
-  @DisplayName("show returns task when is not found") 
-  void show_ReturnsTask_WhenNotFound() {
+  @DisplayName("show returns nothing when is not found") 
+  void show_ReturnsNothing_WhenNotFound() {
     BDDMockito.when(taskServiceMock.findById(ArgumentMatchers.anyLong()))
       .thenReturn(Optional.empty());
 

@@ -68,7 +68,7 @@ public class PersonControllerIT {
 
   @Test
   @DisplayName("list returns a empty list of people when is not found") 
-  void list_ReturnsEmptyListOfDepartments_WhenIsNotFound() {
+  void list_ReturnsEmptyListOfPeople_WhenIsNotFound() {
     List<ListPeopleDto> listPeople = testRestTemplate.exchange("/people", HttpMethod.GET, null, 
       new ParameterizedTypeReference<List<ListPeopleDto>>() {}).getBody();
 

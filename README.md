@@ -1,5 +1,7 @@
 # Task Management
 
+OBS: Fiz todo o banco de dados em inglês para padronizar
+
 ## Passo a passo para rodar
 
 1 - Clonar o repositório `git clone https://github.com/VitorCavalcante9/Task-Management.git`

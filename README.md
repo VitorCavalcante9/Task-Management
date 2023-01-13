@@ -1,6 +1,6 @@
 # Task Management
 
-OBS: Fiz todo o banco de dados em inglês para padronizar
+OBS: Fiz todo o banco de dados em inglês para manter um padrão
 
 ## Passo a passo para rodar
 
